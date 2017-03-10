@@ -1,50 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/li_section"
-            android:layout_alignParentLeft="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="politics"
-            android:gravity="left"
-            android:textAllCaps="true"
-            android:textSize="12sp"
-            />
-        <TextView
-            android:id="@+id/li_date_new"
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2017-03-07T22:15:10Z"
-            android:gravity="left"
-            android:textAllCaps="true"
-            android:textSize="12sp"
-            />
-
-    </RelativeLayout>
 
     <TextView
-        android:id="@+id/li_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left"
+        android:id="@+id/li_icon"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:background="@drawable/circle"
         android:ellipsize="end"
         android:maxLines="2"
-        android:textSize="16sp"
-        android:text="Theresa May heads for battle with MPs over Brexit bill"/>
-    <TextView
-        android:id="@+id/li_type"
-        android:layout_width="match_parent"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:text="B"
+        android:layout_margin="12dp"/>
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_height="wrap_content"
-        android:gravity="right"
-        android:ellipsize="end"
-        android:maxLines="2"
-        android:textSize="14sp"
-        android:text="#article "/>
+        android:layout_width="0dp"
+        android:layout_weight="4"
+        >
+        <TextView
+            android:id="@+id/li_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="Theresa May heads for battle with MPs over Brexit bill"
+            android:paddingTop="12dp"/>
+        <TextView
+            android:id="@+id/li_about"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="article about Footbool"
+            android:gravity="right"
+            android:textSize="12sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/li_date"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:text="Mar 8"
+            android:textColor="@color/colorTime"
+            android:gravity="right"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/li_time"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:text="18:30"
+            android:gravity="right"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+
 
 </LinearLayout>

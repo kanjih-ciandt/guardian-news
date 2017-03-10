@@ -4,21 +4,15 @@ import android.app.LoaderManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
-import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import com.kanjih.guardian_news.adapter.NewsAdapter;
 import com.kanjih.guardian_news.listener.EndlessScrollListener;
@@ -27,9 +21,6 @@ import com.kanjih.guardian_news.to.News;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.R.attr.key;
-import static android.R.attr.x;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<News>>{
 
@@ -52,28 +43,21 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         boolean isConnected = activeNetwork != null &&
                 activeNetwork.isConnectedOrConnecting();
 
-
         if(isConnected) {
             getLoaderManager().initLoader(1, null, this);
-            // Find a reference to the {@link ListView} in the layout
 
         }
     }
-
-
-
 
     @Override
     public Loader<List<News>> onCreateLoader(int i, Bundle bundle) {
         Log.i(LOG_TAG, "onCreateLoader");
         Uri baseUri = Uri.parse(REQUEST_URL);
         Uri.Builder uriBuilder = baseUri.buildUpon();
-
-        uriBuilder.appendQueryParameter("from-date","2017-03-07");
         uriBuilder.appendQueryParameter("api-key", "test");
-        uriBuilder.appendQueryParameter("page-size","25");
-        return new GuardianLoadAsyncTask(this, uriBuilder.toString());
+        uriBuilder.appendQueryParameter("page-size","35");
 
+        return new GuardianLoadAsyncTask(this, uriBuilder.toString());
     }
 
     @Override
@@ -104,10 +88,19 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         // Find a reference to the {@link ListView} in the layout
         final ListView newsListView = (ListView) findViewById(R.id.list);
 
+        newsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                News news = newsList.get(position);
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(news.getWebUrl()));
+                startActivity(intent);
+
+            }
+        });
+
         newsListView.setAdapter(adapter);
         newsListView.setOnScrollListener(new EndlessScrollListener());
-
-
 
     }
 }

@@ -27,7 +27,6 @@ public class QueryUtils {
 
     public static final String LOG_TAG = QueryUtils.class.getName();
 
-
     /**
      *
      * @param requestUrl
@@ -73,7 +72,6 @@ public class QueryUtils {
     private static String makeHttpRequest(URL url) throws IOException {
         String jsonResponse = "";
 
-        // If the URL is null, then return early.
         if (url == null) {
             return jsonResponse;
         }
@@ -158,8 +156,6 @@ public class QueryUtils {
             // with the message from the exception.
             Log.e("QueryUtils", "Problem parsing the earthquake JSON results", e);
         }
-
-
 
         return newsList;
     }

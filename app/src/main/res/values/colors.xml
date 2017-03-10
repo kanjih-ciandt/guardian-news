@@ -3,4 +3,57 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="colorTime">#00695C</color>
+
+    <color name="colorA">#4A7BA7</color>
+
+    <color name="colorB">#04B4B3</color>
+
+    <color name="colorC">#10CAC9</color>
+
+    <color name="colorD">#F5A623</color>
+
+    <color name="colorE">#FF7D50</color>
+
+    <color name="colorF">#EF6C00</color>
+
+    <color name="colorG">#FC6644</color>
+
+    <color name="colorH">#E75F40</color>
+
+    <color name="colorI">#E13A20</color>
+
+    <color name="colorJ">#9E9D24</color>
+
+    <color name="colorK">#827717</color>
+
+    <color name="colorL">#C0CA33</color>
+
+    <color name="colorM">#7CB342</color>
+
+    <color name="colorN">#C03823</color>
+
+    <color name="colorO">#C03823</color>
+
+    <color name="colorP">#C03823</color>
+
+    <color name="colorQ">#C03823</color>
+
+    <color name="colorR">#C03823</color>
+
+    <color name="colorS">#C03823</color>
+
+    <color name="colorT">#C03823</color>
+
+    <color name="colorU">#C03823</color>
+
+    <color name="colorV">#C03823</color>
+
+    <color name="colorX">#C03823</color>
+
+    <color name="colorY">#C03823</color>
+
+    <color name="colorZ">#C03823</color>
+
 </resources>
